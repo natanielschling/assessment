@@ -7,11 +7,18 @@
 <body>
 <h1>Arabic number to english phrase</h1>
 <p>
-  <form method="post" onsubmit="alert(arabic2en());">
-  	<input type="text" placeholder="Enter arabic number">
-  	<input type="submit" />
+  <form method="post" onsubmit="return false;">
+  	<input type="text" placeholder="Enter arabic number" id="number">
+  	<input type="submit" onclick="tmp();"/>
   </form>
 </p>
 <script src="script.js" type="text/javascript"></script>
+<script>
+	function tmp() {
+		var r = arabic2en(document.getElementById('number').value, 0);
+		alert(r);
+		return false;
+	}
+</script>
 </body>
 </html>
