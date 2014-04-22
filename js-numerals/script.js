@@ -21,6 +21,20 @@ var ones = new Array(
  'nineteen'
 );
 
+var tens = new Array(
+ '',
+ '',
+ 'twenty',
+ 'thirty',
+ 'forty',
+ 'fifty',
+ 'sixty',
+ 'seventy',
+ 'eighty',
+ 'ninety'
+);
+
+
 arabic2en = function(v) {
     var result = '';
 
@@ -29,7 +43,7 @@ arabic2en = function(v) {
     if (a < 20) {
         result += ones[a];
     } else {
-        result = 'not yet';
+        result += tens[Math.round((a / 10) - 0.5)] + ' ' + ones[a % 10];
     }
 
     return result;
